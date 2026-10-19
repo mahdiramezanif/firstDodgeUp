@@ -1,15 +1,32 @@
-# DodgeUp
-DodgeUp is a graphical game.
-The objective is to control a dummy character at the bottom of the screen, avoiding collisions with incoming bricks
-and collecting white blocks that appear randomly. 
+# DodgeUp Classic — Java Arcade Game
 
-## Features
-- Dynamic gameplay: Bricks come from above in a random pattern, creating a unique challenge each time.
-- Collectible white blocks: The player must collect white blocks while avoiding the bricks.
-- Lives system: The dummy character has a certain number of lives, and hitting a brick reduces the number.
-- Scoring: The game keeps track of the player's score based on the number of white blocks collected.
-- Save each player's name and most points in the top players table
+An early version of a **2D obstacle-dodging game** built with Java and the Processing library. Move horizontally with the mouse, avoid falling blocks, and collect items to improve your score.
 
-# Important feature
-By means of a complex algorithm, the vertical and horizontal distance of both randomly generated blocks is controlled
-so that the player always has an escape route.
+## Gameplay
+- Mouse-controlled player movement
+- Random falling obstacles and collectible items
+- Collision detection and a limited number of lives
+- End-of-round win/game-over states
+- Player name and high-score logic in the source
+
+## Tech stack
+Java, Processing, Maven.
+
+## Run requirements
+1. Install a JDK and Maven.
+2. Ensure the Processing Core library is available to the project (the `pom.xml` may need a proper dependency declaration).
+3. Open the project in a Java IDE and run `Main.java` once its missing dependencies have been addressed.
+
+```bash
+git clone https://github.com/mahdiramezanif/firstDodgeUp.git
+cd firstDodgeUp
+mvn compile
+```
+
+**Current blocker:** `src/main/java/Main.java` calls `Database.read()` and `Database.write()`, but the `Database` class is missing from the public repository tree. Add that implementation or remove those calls before a successful compilation.
+
+## Controls
+Move left/right with the **mouse** to avoid colored blocks and collect the white items.
+
+## Project status
+Early educational game prototype. For another version of this arcade concept, see [graphical-game](https://github.com/mahdiramezanif/graphical-game). Screenshots and a short gameplay GIF would make this README clearer.
